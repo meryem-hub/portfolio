@@ -2,7 +2,6 @@ import { motion, useMotionValue, useSpring, useTransform, AnimatePresence } from
 import { useEffect, useState, useCallback } from "react";
 import { FaReact, FaJs, FaNodeJs, FaAws, FaGithub, FaLinkedin, FaArrowRight, FaCode, FaPalette, FaLightbulb, FaTools, FaMobile, FaCloud, FaServer } from "react-icons/fa";
 import { SiTypescript, SiAmazon, SiNextdotjs, SiMongodb, SiTailwindcss } from "react-icons/si";
-
 const Hero = () => {
   const [textIndex, setTextIndex] = useState(0);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -49,7 +48,6 @@ const Hero = () => {
     { icon: FaNodeJs, name: "Node.js", color: "text-green-500" },
     { icon: SiMongodb, name: "MongoDB", color: "text-green-400" },
     { icon: SiTailwindcss, name: "Tailwind CSS", color: "text-cyan-300" },
-    { icon: FaAws, name: "AWS", color: "text-orange-400" },
   ];
 
   // Mouse parallax effects
@@ -292,7 +290,7 @@ const Hero = () => {
             whileTap={{ scale: 0.95 }}
             className="group relative px-12 py-4 bg-[#FFD700] text-black font-bold rounded-full overflow-hidden transition-all duration-300 flex items-center gap-3"
           >
-            <span className="relative z-10">View My Work</span>
+           <a href="https://github.com/meryem-hub"><span className="relative z-10">View My Work</span></a> 
             <FaGithub className="relative z-10 text-lg" />
             <motion.div
               className="absolute inset-0 bg-gradient-to-r from-yellow-300 to-[#FFD700]"
@@ -318,81 +316,13 @@ const Hero = () => {
           </motion.a>
         </motion.div>
 
-        {/* Social Links */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={isVisible ? { opacity: 1 } : {}}
-          transition={{ duration: 0.8, delay: 1.4 }}
-          className="flex justify-center items-center gap-6 mb-8"
-        >
-          <motion.a
-            href="https://github.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            whileHover={{ scale: 1.2, color: "#FFD700" }}
-            className="text-gray-400 text-2xl transition-colors duration-300"
-          >
-            <FaGithub />
-          </motion.a>
-          <motion.a
-            href="https://linkedin.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            whileHover={{ scale: 1.2, color: "#FFD700" }}
-            className="text-gray-400 text-2xl transition-colors duration-300"
-          >
-            <FaLinkedin />
-          </motion.a>
-        </motion.div>
-
-        {/* Stats Bar */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={isVisible ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 1.2 }}
-          className="grid grid-cols-3 gap-8 max-w-2xl mx-auto pt-8 border-t border-white/10"
-        >
-          {[
-            { number: "17+", label: "Years Experience" },
-            { number: "200+", label: "Projects Delivered" },
-            { number: "99%", label: "Client Satisfaction" }
-          ].map((stat, index) => (
-            <div key={index} className="text-center">
-              <div className="text-2xl md:text-3xl font-bold text-[#FFD700]">{stat.number}</div>
-              <div className="text-sm text-gray-400 mt-1">{stat.label}</div>
-            </div>
-          ))}
-        </motion.div>
+   
+      
       </div>
 
-      {/* Enhanced Scroll Indicator */}
-      <motion.div
-        className="absolute bottom-8 flex flex-col items-center text-gray-400"
-        animate={{ y: [0, 10, 0] }}
-        transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
-      >
-        <span className="text-sm mb-2">Explore More</span>
-        <motion.div
-          className="w-1 h-8 bg-gradient-to-b from-[#FFD700] to-transparent rounded-full"
-          animate={{ height: [8, 20, 8] }}
-          transition={{ repeat: Infinity, duration: 1.5 }}
-        />
-      </motion.div>
+    
 
-      {/* Custom Cursor */}
-      <motion.div
-        className="fixed w-8 h-8 pointer-events-none z-50 mix-blend-difference"
-        style={{
-          x: mousePosition.x - 16,
-          y: mousePosition.y - 16,
-        }}
-      >
-        <motion.div
-          className="w-full h-full rounded-full bg-[#FFD700]"
-          animate={{ scale: [1, 1.2, 1] }}
-          transition={{ repeat: Infinity, duration: 2 }}
-        />
-      </motion.div>
+ 
     </section>
   );
 };
