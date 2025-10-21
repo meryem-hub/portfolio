@@ -95,9 +95,8 @@ const About = () => {
                 transition={{ duration: 0.6 }}
                 className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-white/5 backdrop-blur-sm border border-white/10 mb-4"
               >
-                <SiAmazon className="text-[#FFD700] text-xl" />
                 <span className="text-sm font-medium text-gray-300">Senior Frontend Engineer</span>
-                <div className="w-2 h-2 bg-[#FFD700] rounded-full animate-pulse" />
+            
               </motion.div>
 
               <motion.h2
@@ -113,29 +112,30 @@ const About = () => {
             </div>
 
             {/* Description */}
-            <motion.div
-              variants={itemVariants}
-              className="space-y-6 text-gray-300 text-lg leading-relaxed"
-            >
-              <p>
-                With <span className="text-[#FFD700] font-semibold">1+ years</span> of experience at Amazon, 
-                I've dedicated my career to pushing the boundaries of web development and creating 
-                exceptional digital experiences at scale.
-              </p>
-              
-              <p>
-                As a Frontend Engineer, I specialize in building robust, scalable applications 
-                using modern technologies like React, TypeScript, and Next.js. My expertise lies in 
-                creating intuitive user interfaces that combine beautiful design with cutting-edge 
-                functionality.
-              </p>
-              
-              <p>
-                I'm passionate about mentoring developers, contributing to open-source projects, 
-                and staying at the forefront of emerging technologies. My approach combines technical 
-                excellence with user-centered design principles to deliver products that users love.
-              </p>
-            </motion.div>
+          <motion.div
+  variants={itemVariants}
+  className="space-y-6 text-gray-300 text-lg leading-relaxed"
+>
+  <p>
+    I build digital products that solve real-world problems.
+
+  </p>
+  
+  <p>
+    My work focuses on creating efficient, maintainable, and high-performance applications. 
+    I enjoy diving into complex challenges, optimizing systems, and turning ideas into functional solutions.
+  </p>
+  
+  <p>
+    Beyond coding, I contribute to open-source, explore emerging tech. I believe in building software that not only works but empowers its users.
+  </p>
+
+  <p>
+    I’m constantly exploring innovative tools, frameworks, and patterns to stay ahead in the ever-evolving tech landscape. 
+    Every project I work on is an opportunity to experiment, learn, and deliver solutions that make a meaningful impact.
+  </p>
+</motion.div>
+
 
             {/* Stats */}
             <motion.div

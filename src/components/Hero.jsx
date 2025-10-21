@@ -7,38 +7,29 @@ const Hero = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isVisible, setIsVisible] = useState(false);
   
-  const texts = [
-    { 
-      title: "Full-Stack Developer", 
-      icon: FaCode,
-      color: "text-blue-400"
-    },
-    { 
-      title: "UI/UX Enthusiast", 
-      icon: FaPalette,
-      color: "text-pink-400"
-    },
-    { 
-      title: "Tech Innovator", 
-      icon: FaLightbulb,
-      color: "text-yellow-400"
-    },
-    { 
-      title: "Problem Solver", 
-      icon: FaTools,
-      color: "text-green-400"
-    },
-    { 
-      title: "React Specialist", 
-      icon: FaReact,
-      color: "text-cyan-400"
-    },
-    { 
-      title: "Mobile First Developer", 
-      icon: FaMobile,
-      color: "text-purple-400"
-    }
-  ];
+const texts = [
+  { 
+    title: "Full-Stack Creator",    // strong + confident
+    icon: FaCode,
+    color: "text-blue-400"
+  },
+  { 
+    title: "Design Dreamer",        // girly + creative
+    icon: FaPalette,
+    color: "text-pink-400"
+  },
+  { 
+    title: "Tech Visionary",        // inspiring + innovative
+    icon: FaLightbulb,
+    color: "text-yellow-400"
+  },
+  { 
+    title: "Creative Problem Solver", // adds personality + creativity
+    icon: FaTools,
+    color: "text-green-400"
+  },
+
+];
 
   const techIcons = [
     { icon: FaReact, name: "React", color: "text-cyan-400" },
@@ -118,13 +109,7 @@ const Hero = () => {
     return <span>{displayText}</span>;
   };
 
-  const floatingElements = [
-    { top: '20%', left: '10%', delay: 0, size: 'w-4 h-4' },
-    { top: '70%', left: '85%', delay: 1, size: 'w-6 h-6' },
-    { top: '40%', left: '90%', delay: 2, size: 'w-3 h-3' },
-    { top: '80%', left: '15%', delay: 3, size: 'w-5 h-5' },
-    { top: '25%', left: '75%', delay: 4, size: 'w-4 h-4' },
-  ];
+
 
   return (
     <section
@@ -153,42 +138,12 @@ const Hero = () => {
         className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full blur-[100px] opacity-20"
       />
 
-      {/* Floating Particles */}
-      {floatingElements.map((element, index) => (
-        <motion.div
-          key={index}
-          initial={{ opacity: 0, scale: 0 }}
-          animate={{ 
-            opacity: [0, 1, 0],
-            scale: [0, 1, 0],
-            y: [0, -50, 0],
-            x: [0, 20, 0]
-          }}
-          transition={{
-            duration: 4,
-            delay: element.delay,
-            repeat: Infinity,
-            repeatType: "loop",
-            ease: "easeInOut"
-          }}
-          className={`absolute ${element.size} bg-[#FFD700] rounded-full opacity-60`}
-          style={{ top: element.top, left: element.left }}
-        />
-      ))}
+     
 
       {/* Main Content */}
       <div className="relative z-10 max-w-6xl mx-auto px-6">
         {/* Intro Badge */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isVisible ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-8"
-        >
-          <SiAmazon className="text-[#FFD700] text-lg" />
-          <span className="text-sm font-medium text-gray-300">Senior Frontend Developer</span>
-          <div className="w-2 h-2 bg-[#FFD700] rounded-full animate-pulse" />
-        </motion.div>
+       
 
         {/* Main Heading - Single Line */}
         <motion.h1
@@ -234,16 +189,16 @@ const Hero = () => {
         </div>
 
         {/* Description */}
-        <motion.p
-          initial={{ opacity: 0, y: 30 }}
-          animate={isVisible ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed mb-12"
-        >
-          Crafting exceptional digital experiences with {""}
-          <span className="text-[#FFD700] font-semibold">17+ years</span> of expertise at Amazon. 
-          Specializing in scalable frontend architecture, immersive UI/UX, and cutting-edge web technologies.
-        </motion.p>
+     <motion.p
+  initial={{ opacity: 0, y: 30 }}
+  animate={isVisible ? { opacity: 1, y: 0 } : {}}
+  transition={{ duration: 0.8, delay: 0.8 }}
+  className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed mb-12"
+>
+  Creating <span className="text-[#FFD700] font-semibold">impactful digital products</span> that solve real-world problems 
+  through <span className="text-[#FFD700] font-semibold">innovative technology</span> and smooth user experiences.
+</motion.p>
+
 
         {/* Tech Stack Icons */}
         <motion.div

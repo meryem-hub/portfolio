@@ -105,7 +105,7 @@ const Contact = () => {
           >
             <MessageCircle className="text-[#FFD700] text-lg" />
             <span className="text-sm font-medium text-gray-300">Get In Touch</span>
-            <div className="w-2 h-2 bg-[#FFD700] rounded-full animate-pulse" />
+          
           </motion.div>
 
           <motion.h2
@@ -331,6 +331,22 @@ const Contact = () => {
             ))}
           </div>
         </motion.div>
+ <motion.div
+  initial={{ opacity: 0, y: 30 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8, delay: 0.8 }}
+  className="text-center mt-12 mb-6"
+>
+  <p className="text-gray-500 italic text-sm max-w-xl mx-auto mb-3">
+    "Code builds worlds, and every function shapes the future."
+  </p>
+  <div className="border-t border-white/10 pt-4">
+    <p className="text-gray-400 text-xs">
+      © 2024 Meryem Ebrahim • Built with passion in Ethiopia
+    </p>
+  </div>
+</motion.div>
+
       </div>
     </section>
   );
