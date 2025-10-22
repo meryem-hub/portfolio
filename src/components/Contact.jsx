@@ -1,7 +1,8 @@
 // components/Contact.jsx
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter, MessageCircle } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Github, Linkedin, MessageCircle } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -12,6 +13,8 @@ const Contact = () => {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null);
+  const formRef = useRef();
 
   const handleChange = (e) => {
     setFormData({
@@ -23,21 +26,40 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      alert('Thank you for your message! I\'ll get back to you soon.');
+    setSubmitStatus(null);
+
+    // ✅ YOUR ACTUAL CREDENTIALS - ALL SET!
+    const emailJsConfig = {
+      serviceId: 'service_q9ral8t',
+      templateId: 'template_60qmmc6', 
+      publicKey: 'aAJ5SLhkczdN3Q9am',
+    };
+
+    try {
+      const result = await emailjs.sendForm(
+        emailJsConfig.serviceId,
+        emailJsConfig.templateId,
+        formRef.current,
+        emailJsConfig.publicKey
+      );
+
+      console.log('Email sent successfully:', result);
+      setSubmitStatus('success');
       setFormData({ name: '', email: '', subject: '', message: '' });
-    }, 2000);
+    } catch (error) {
+      console.error('Failed to send email:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactInfo = [
     {
       icon: Mail,
       label: 'Email',
-      value: 'meryemerbahim.46@gmail.com',
-      link: 'mailto:meryemerbahim.46@gmail.com'
+      value: 'meryemebrahim.46@gmail.com',
+      link: 'mailto:meryemebrahim.46@gmail.com'
     },
     {
       icon: Phone,
@@ -58,7 +80,7 @@ const Contact = () => {
       links: [
         { icon: Github, url: 'https://github.com/meryem-hub', label: 'GitHub' },
         { icon: Linkedin, url: 'https://linkedin.com/in/meryem-hub', label: 'LinkedIn' },
-        { icon: Send , url: 'https://t.me/Leyan_leyuna', label: 'Telegram' }
+        { icon: Send, url: 'https://t.me/Leyan_leyuna', label: 'Telegram' }
       ]
     }
   ];
@@ -87,8 +109,60 @@ const Contact = () => {
 
   return (
     <section id="contact" className="relative py-20 bg-gradient-to-br from-[#0a0a0a] via-[#111] to-[#1a1a2e] overflow-hidden">
-   
       
+      {/* Floating Success Modal */}
+      {submitStatus === 'success' && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm"
+          onClick={() => setSubmitStatus(null)}
+        >
+          <motion.div
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0.8, opacity: 0 }}
+            className="bg-gradient-to-br from-[#1a1a2e] to-[#16213e] border border-[#FFD700]/30 rounded-2xl p-8 mx-4 max-w-md text-center shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Animated Checkmark */}
+            <motion.div
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
+              className="w-20 h-20 bg-gradient-to-r from-[#FFD700] to-yellow-400 rounded-full flex items-center justify-center mx-auto mb-6"
+            >
+              <motion.svg
+                initial={{ pathLength: 0 }}
+                animate={{ pathLength: 1 }}
+                transition={{ delay: 0.5, duration: 0.5 }}
+                className="w-10 h-10 text-black"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+              </motion.svg>
+            </motion.div>
+
+            <h3 className="text-2xl font-bold text-white mb-3">Message Sent! 🎉</h3>
+            <p className="text-gray-300 mb-6 leading-relaxed">
+              Thank you for reaching out! I've received your message and will get back to you within 24 hours.
+            </p>
+
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => setSubmitStatus(null)}
+              className="bg-gradient-to-r from-[#FFD700] to-yellow-400 text-black font-bold py-3 px-8 rounded-lg hover:shadow-2xl hover:shadow-yellow-400/25 transition-all duration-300"
+            >
+              Awesome, Thanks!
+            </motion.button>
+          </motion.div>
+        </motion.div>
+      )}
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <motion.div
@@ -105,7 +179,6 @@ const Contact = () => {
           >
             <MessageCircle className="text-[#FFD700] text-lg" />
             <span className="text-sm font-medium text-gray-300">Get In Touch</span>
-          
           </motion.div>
 
           <motion.h2
@@ -217,7 +290,18 @@ const Contact = () => {
           >
             <h3 className="text-2xl font-bold text-white mb-6">Send Message</h3>
             
-            <form onSubmit={handleSubmit} className="space-y-6">
+            {/* Error Message Only - Success message removed from here */}
+            {submitStatus === 'error' && (
+              <motion.div
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="mb-6 p-4 bg-red-500/20 border border-red-500/30 rounded-lg text-red-400"
+              >
+                ❌ Failed to send message. Please try again or contact me directly via email.
+              </motion.div>
+            )}
+            
+            <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
@@ -331,22 +415,22 @@ const Contact = () => {
             ))}
           </div>
         </motion.div>
- <motion.div
-  initial={{ opacity: 0, y: 30 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.8, delay: 0.8 }}
-  className="text-center mt-12 mb-6"
->
-  <p className="text-gray-500 italic text-sm max-w-xl mx-auto mb-3">
-    "Code builds worlds, and every function shapes the future."
-  </p>
-  <div className="border-t border-white/10 pt-4">
-    <p className="text-gray-400 text-xs">
-      © 2024 Meryem Ebrahim • Built with passion in Ethiopia
-    </p>
-  </div>
-</motion.div>
 
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
+          className="text-center mt-12 mb-6"
+        >
+          <p className="text-gray-500 italic text-sm max-w-xl mx-auto mb-3">
+  "Think. Code. Deploy. Repeat."
+          </p>
+          <div className="border-t border-white/10 pt-4">
+            <p className="text-gray-400 text-xs">
+              © 2025 Meryem Ebrahim • Built with passion in Ethiopia
+            </p>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

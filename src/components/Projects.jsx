@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ExternalLink, Github, ArrowRight, Filter, X, Users, Star, Zap, Calendar } from 'lucide-react';
 import { FaReact, FaNodeJs, FaAws, FaPython } from 'react-icons/fa';
-import { SiTypescript, SiNextdotjs, SiTailwindcss, SiMongodb, SiFirebase, SiNetlify } from 'react-icons/si';
+import { SiTypescript, SiNextdotjs, SiTailwindcss, SiMongodb, SiExpress, SiNetlify } from 'react-icons/si';
 
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState('all');
@@ -24,17 +24,17 @@ const Projects = () => {
       description: "Modern Netflix replica with advanced features, real-time streaming simulation, and personalized content recommendations.",
       longDescription: "A feature-rich Netflix clone built with cutting-edge technologies, featuring user authentication, movie trailers, responsive design, and a seamless user experience that mirrors the original platform.",
       image: "https://meryem-hub.github.io/Netflix-Clone-2025",
-      technologies: [FaReact, SiTailwindcss, SiFirebase],
-      techNames: ["React", "Tailwind CSS", "Firebase"],
-      category: "frontend",
+      technologies: [FaReact, SiTailwindcss, SiExpress],
+      techNames: ["React", "Tailwind CSS", "Node.js", "MongoDB", "Express"],
+      category: "fullstack",
       github: "#",
       live: "https://meryem-hub.github.io/Netflix-Clone-2025",
       features: [
-        "User authentication",
+        "User authentication with JWT",
         "Movie trailer integration",
-        "Responsive design",
-        "Modern UI/UX",
-        "Real-time updates"
+        "RESTful API with Express",
+        "MongoDB database",
+        "Responsive design"
       ],
       stats: {
         performance: "95%",
@@ -42,7 +42,7 @@ const Projects = () => {
         complexity: "Advanced"
       },
       status: "completed",
-      year: "2024"
+      year: "2025"
     },
     {
       id: 2,
@@ -50,17 +50,17 @@ const Projects = () => {
       description: "Full-stack e-commerce platform with shopping cart, user authentication, and payment integration.",
       longDescription: "A comprehensive Amazon clone featuring product listings, shopping cart functionality, user authentication, and responsive design. Built with modern web technologies for optimal performance.",
       image: "https://amazon-clone-321.netlify.app",
-      technologies: [FaReact, SiTailwindcss, SiFirebase],
-      techNames: ["React", "Tailwind CSS", "Firebase"],
+      technologies: [FaReact, SiTailwindcss, FaNodeJs, SiMongodb, SiExpress],
+      techNames: ["React", "Tailwind CSS", "Node.js", "MongoDB", "Express"],
       category: "fullstack",
       github: "#",
       live: "https://amazon-clone-321.netlify.app",
       features: [
-        "Shopping cart",
-        "User authentication",
-        "Product search",
-        "Order management",
-        "Payment integration"
+        "Shopping cart with MongoDB",
+        "User authentication & sessions",
+        "RESTful API with Express.js",
+        "Product search & filtering",
+        "Order management system"
       ],
       stats: {
         performance: "92%",
@@ -68,7 +68,7 @@ const Projects = () => {
         complexity: "Advanced"
       },
       status: "completed",
-      year: "2024"
+      year: "2025"
     },
     {
       id: 3,
@@ -94,7 +94,7 @@ const Projects = () => {
         complexity: "Intermediate"
       },
       status: "completed",
-      year: "2024"
+      year: "2025"
     },
     {
       id: 4,
@@ -116,11 +116,11 @@ const Projects = () => {
       ],
       stats: {
         performance: "88%",
-        team: "4 members",
+        team: "3 members",
         contribution: "Frontend Lead"
       },
       status: "completed",
-      year: "2024"
+      year: "2025"
     },
     {
       id: 5,
@@ -128,17 +128,17 @@ const Projects = () => {
       description: "Interactive cooking platform with recipe management, meal planning, and cooking tutorials.",
       longDescription: "A comprehensive cooking platform that helps users discover recipes, plan meals, and learn cooking techniques. Features include step-by-step instructions, ingredient management, and personalized recommendations.",
       image: "https://smartchefonline.netlify.app",
-      technologies: [FaReact, SiTailwindcss, SiFirebase],
-      techNames: ["React", "Tailwind CSS", "Firebase"],
-      category: "webapp",
+      technologies: [FaReact, SiTailwindcss, FaNodeJs, SiMongodb, SiExpress],
+      techNames: ["React", "Tailwind CSS", "Node.js","Express"],
+      category: "fullstack",
       github: "#",
       live: "https://smartchefonline.netlify.app",
       features: [
-        "Recipe management",
-        "Meal planning",
-        "Cooking tutorials",
-        "Ingredient tracking",
-        "User profiles"
+        "Recipe CRUD operations",
+        "User profiles & favorites",
+        "RESTful API backend",
+        "MongoDB data storage",
+        "JWT authentication"
       ],
       stats: {
         performance: "90%",
@@ -146,7 +146,7 @@ const Projects = () => {
         complexity: "Intermediate"
       },
       status: "completed",
-      year: "2024"
+      year: "2025"
     },
     {
       id: 6,
@@ -172,88 +172,89 @@ const Projects = () => {
         impact: "Educational"
       },
       status: "development",
-      year: "2024"
+      year: "2025"
     },
+{
+  id: 7,
+  title: "EthioAI - AI Solutions",
+  description: "Team-based AI platform focusing on Ethiopian language processing and machine learning solutions.",
+  longDescription: "An innovative AI platform built during my internship at Nile Tech, focusing on Ethiopian languages and local context. Developed natural language processing capabilities, data analysis tools, and intelligent solutions tailored for Ethiopian businesses and developers. Built collaboratively with a team using the MERN stack.",
+  image: "https://ethioai-project.netlify.app", // or your actual image URL
+  technologies: [FaReact, FaNodeJs, SiMongodb],
+  techNames: ["React", "Node.js", "MongoDB"],
+  category: "team", // moved from webapp → team
+  github: "https://github.com/meryem-hub/ethioai", // optional if available
+  live: "#", // placeholder for live demo
+  features: [
+    "Amharic language processing",
+    "Data analysis dashboard",
+    "Team-based development",
+    "RESTful API with Node.js",
+    "MongoDB integration"
+  ],
+  stats: {
+    performance: "In Development",
+    team: "4 members",
+    contribution: "Backend & AI Integration"
+  },
+  status: "development",
+  year: "2025"
+}
+,
     {
-      id: 7,
-      title: "EthioAI - AI Solutions",
-      description: "AI-powered platform offering Ethiopian language processing, data analysis, and machine learning solutions.",
-      longDescription: "An innovative AI platform focusing on Ethiopian languages and local context. Provides natural language processing, data analysis tools, and machine learning solutions tailored for Ethiopian businesses and developers.",
+      id: 8,
+      title: "DevHub - Developer Portfolio Builder",
+      description: "AI-powered portfolio builder for developers with automated project imports, resume parsing, and customizable templates.",
+      longDescription: "A sophisticated platform that helps developers create stunning portfolios automatically. Features include GitHub project integration, AI-generated descriptions, resume parsing, and multiple responsive templates designed specifically for tech professionals.",
       image: "/api/placeholder/600/400",
-      technologies: [FaPython, FaReact, SiMongodb],
-      techNames: ["Python", "React", "MongoDB"],
-      category: "webapp",
-      github: "https://github.com/meryem-hub/ethioai",
+      technologies: [SiNextdotjs, SiTypescript, SiTailwindcss, FaAws],
+      techNames: ["Next.js 14", "TypeScript", "Tailwind CSS", "AWS"],
+      category: "fullstack",
+      github: "https://github.com/meryem-hub/devhub",
       live: "#",
       features: [
-        "Ethiopian NLP",
-        "Data analysis",
-        "ML solutions",
-        "Local context",
-        "API integration"
+        "GitHub API integration",
+        "AI-generated project descriptions",
+        "Resume parsing & analysis",
+        "Multiple portfolio templates",
+        "Real-time preview",
+        "Export as static site"
       ],
       stats: {
         progress: "Development",
-        innovation: "High",
-        market: "Ethiopia"
+        templates: "10+ planned",
+        automation: "AI-powered"
       },
-      status: "planning",
-      year: "2024"
+      status: "development",
+      year: "2025"
     },
-   {
-  id: 8,
-  title: "DevHub - Developer Portfolio Builder",
-  description: "AI-powered portfolio builder for developers with automated project imports, resume parsing, and customizable templates.",
-  longDescription: "A sophisticated platform that helps developers create stunning portfolios automatically. Features include GitHub project integration, AI-generated descriptions, resume parsing, and multiple responsive templates designed specifically for tech professionals.",
-  image: "/api/placeholder/600/400",
-  technologies: [SiNextdotjs, SiTypescript, SiTailwindcss, FaAws],
-  techNames: ["Next.js 14", "TypeScript", "Tailwind CSS", "AWS"],
-  category: "fullstack",
-  github: "https://github.com/meryem-hub/devhub",
-  live: "#",
-  features: [
-    "GitHub API integration",
-    "AI-generated project descriptions",
-    "Resume parsing & analysis",
-    "Multiple portfolio templates",
-    "Real-time preview",
-    "Export as static site"
-  ],
-  stats: {
-    progress: "Development",
-    templates: "10+ planned",
-    automation: "AI-powered"
-  },
-  status: "development",
-  year: "2024"
-},
-{
-  id: 8,
-  title: "TaskFlow - Project Management SaaS",
-  description: "Enterprise-grade project management platform with AI task automation, team collaboration, and real-time analytics.",
-  longDescription: "A comprehensive SaaS platform for project management featuring AI-powered task automation, real-time team collaboration, advanced analytics, and integrations with popular development tools. Built with scalability and enterprise needs in mind.",
-  image: "/api/placeholder/600/400",
-  technologies: [SiNextdotjs, SiTypescript, SiTailwindcss, FaNodeJs, SiMongodb],
-  techNames: ["Next.js 14", "TypeScript", "Tailwind CSS", "Node.js", "MongoDB"],
-  category: "fullstack",
-  github: "https://github.com/meryem-hub/taskflow",
-  live: "#",
-  features: [
-    "AI task prioritization",
-    "Real-time team collaboration",
-    "Github/Jira integrations",
-    "Advanced analytics dashboard",
-    "Time tracking & reporting",
-    "Custom workflow automation"
-  ],
-  stats: {
-    progress: "Development",
-    scalability: "Enterprise",
-    integrations: "10+ planned"
-  },
-  status: "development",
-  year: "2024"
-}
+    {
+      id: 9,
+      title: "TaskFlow - Project Management SaaS",
+      description: "Enterprise-grade project management platform with AI task automation, team collaboration, and real-time analytics.",
+      longDescription: "A comprehensive SaaS platform for project management featuring AI-powered task automation, real-time team collaboration, advanced analytics, and integrations with popular development tools. Built with scalability and enterprise needs in mind.",
+      image: "/api/placeholder/600/400",
+      technologies: [SiNextdotjs, SiTypescript, SiTailwindcss, FaNodeJs, SiMongodb],
+      techNames: ["Next.js 14", "TypeScript", "Tailwind CSS", "Node.js", "MongoDB"],
+      category: "fullstack",
+      github: "https://github.com/meryem-hub/taskflow",
+      live: "#",
+      features: [
+        "AI task prioritization",
+        "Real-time team collaboration",
+        "Github/Jira integrations",
+        "Advanced analytics dashboard",
+        "Time tracking & reporting",
+        "Custom workflow automation"
+      ],
+      stats: {
+        progress: "Development",
+        scalability: "Enterprise",
+        integrations: "10+ planned"
+      },
+      status: "development",
+      year: "2025"
+    }
   ];
 
   const filteredProjects = activeFilter === 'all' 
@@ -306,8 +307,7 @@ const Projects = () => {
   return (
     <section id="projects" className="relative py-20 bg-gradient-to-br from-[#0a0a0a] via-[#111] to-[#1a1a2e] overflow-hidden">
       {/* Background Elements */}
-      <div className="absolute top-1/4 left-10% w-96 h-96 bg-gradient-to-r from-[#FFD700] to-yellow-400 rounded-full blur-[120px] opacity-10 animate-pulse" />
-      <div className="absolute bottom-1/4 right-10% w-80 h-80 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full blur-[100px] opacity-10 animate-pulse delay-1000" />
+    
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
@@ -325,7 +325,7 @@ const Projects = () => {
           >
             <Filter className="text-[#FFD700] text-lg" />
             <span className="text-sm font-medium text-gray-300">Real World Projects</span>
-            <div className="w-2 h-2 bg-[#FFD700] rounded-full animate-pulse" />
+           
           </motion.div>
 
           <motion.h2

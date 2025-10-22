@@ -2,6 +2,13 @@ import { motion, useMotionValue, useSpring, useTransform, AnimatePresence } from
 import { useEffect, useState, useCallback } from "react";
 import { FaReact, FaJs, FaNodeJs, FaAws, FaGithub, FaLinkedin, FaArrowRight, FaCode, FaPalette, FaLightbulb, FaTools, FaMobile, FaCloud, FaServer } from "react-icons/fa";
 import { SiTypescript, SiAmazon, SiNextdotjs, SiMongodb, SiTailwindcss } from "react-icons/si";
+import { 
+  GraduationCap, 
+  BookOpen 
+} from "lucide-react";
+import { 
+  FaUsers, 
+} from "react-icons/fa";
 const Hero = () => {
   const [textIndex, setTextIndex] = useState(0);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -9,25 +16,26 @@ const Hero = () => {
   
 const texts = [
   { 
-    title: "Full-Stack Creator",    // strong + confident
-    icon: FaCode,
+    title: "Computer Engineering Student", 
+    icon: GraduationCap,
     color: "text-blue-400"
   },
   { 
-    title: "Design Dreamer",        // girly + creative
-    icon: FaPalette,
-    color: "text-pink-400"
+    title: "Junior Full-Stack Developer", 
+    icon: FaCode,
+    color: "text-cyan-400"
   },
   { 
-    title: "Tech Visionary",        // inspiring + innovative
-    icon: FaLightbulb,
-    color: "text-yellow-400"
+    title: "Frontend Developer", 
+    icon: FaReact,
+    color: "text-purple-400"
   },
   { 
-    title: "Creative Problem Solver", // adds personality + creativity
-    icon: FaTools,
+    title: "Software Development Intern", 
+    icon: FaUsers,
     color: "text-green-400"
   },
+ 
 
 ];
 

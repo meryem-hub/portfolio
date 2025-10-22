@@ -1,7 +1,7 @@
 // components/Experience.jsx
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Calendar, MapPin, Award, ChevronRight, ExternalLink, Code, Users, GraduationCap, BookOpen, Heart } from 'lucide-react';
+import { Calendar, MapPin, Award, ChevronRight, ExternalLink, Code, Users, GraduationCap,Cpu, BookOpen, Heart } from 'lucide-react';
 import { FaReact, FaNodeJs, FaGitAlt } from 'react-icons/fa';
 import { SiTypescript, SiNextdotjs, SiTailwindcss, SiMongodb } from 'react-icons/si';
 
@@ -12,8 +12,8 @@ const Experience = () => {
     kuraz: {
       company: "Kuraz Technology",
       position: "Frontend Developer Intern",
-      period: "2024 - Present",
-      location: "Addis Ababa, Ethiopia",
+      period: "2025",
+      location: "Remote",
       type: "Internship",
       icon: <Code className="w-6 h-6" />,
       color: "from-gray-500 to-cyan-400",
@@ -28,10 +28,30 @@ const Experience = () => {
       techNames: ["React", "TypeScript", "Tailwind CSS", "Git"],
       projects: ["Foodie Finder", "Travel Website", "TipTop"]
     },
+    insa: {
+  company: "INSA",
+  position: "Software Development Trainee",
+  period: "2025",
+  location: "On-site, Addis Ababa, Ethiopia",
+  type: "Training",
+  icon: <Cpu className="w-6 h-6" />, // You can use any appropriate icon
+  color: "from-blue-500 to-indigo-400",
+  borderColor: "border-blue-500/30",
+  achievements: [
+    "Participated in intensive software development training program",
+    "Gained hands-on experience in modern software engineering practices",
+    "Collaborated on real-world projects in an on-site environment",
+    "Developed skills in problem-solving and technical implementation",
+    "Worked with cross-functional teams to deliver software solutions"
+  ],
+  technologies: [FaReact, FaNodeJs, SiMongodb, FaGitAlt],
+  techNames: ["React", "Node.js",'TypeScript' ,"MongoDB", "Git"],
+  projects: ["Training Projects", "Team Collaborations", "Practical Assignments"]
+},
     nile: {
       company: "Nile Tech",
       position: "Software Development Intern",
-      period: "2023 - 2024",
+      period: "2025",
       location: "Remote",
       type: "Internship",
       icon: <Users className="w-6 h-6" />,
@@ -84,8 +104,8 @@ const Experience = () => {
         "Fostered inclusive learning environment for aspiring developers"
       ],
       technologies: [FaReact, SiTailwindcss],
-      techNames: ["HTML/CSS", "JavaScript", "Teaching"],
-      projects: ["Student Projects", "Workshop Materials", "Learning Resources"]
+      techNames: ["HTML/CSS", "JavaScript"],
+      projects: ["Student Projects", "Workshop Materials"]
     }
   };
 
@@ -341,15 +361,16 @@ const Experience = () => {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="text-center mt-16"
           >
-            <motion.a
-              href="/resume.pdf"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-[#FFD700] to-yellow-400 text-black font-bold rounded-full hover:shadow-2xl hover:shadow-yellow-400/25 transition-all duration-300"
-            >
-              <ExternalLink className="w-5 h-5" />
-              <span>Download Resume</span>
-            </motion.a>
+      <motion.a
+  href="/resume.pdf"
+  whileHover={{ scale: 1.05 }}
+  whileTap={{ scale: 0.95 }}
+  className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-[#FFD700] to-yellow-400 text-black font-bold rounded-full hover:shadow-2xl hover:shadow-yellow-400/25 transition-all duration-300"
+  download  // Add this attribute to force download
+>
+  <ExternalLink className="w-5 h-5" />
+  <span>Download Resume</span>
+</motion.a>
           </motion.div>
         </div>
       </div>
