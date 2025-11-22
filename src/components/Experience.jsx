@@ -34,8 +34,8 @@ const Experience = () => {
   period: "2025",
   location: "On-site, Addis Ababa, Ethiopia",
   type: "Training",
-  icon: <Cpu className="w-6 h-6" />, // You can use any appropriate icon
-  color: "from-blue-500 to-indigo-400",
+  icon: <Cpu className="w-6 h-6" />,
+  color: "from-white to-yellow-800 text-black",
   borderColor: "border-blue-500/30",
   achievements: [
     "Participated in intensive software development training program",
@@ -55,8 +55,8 @@ const Experience = () => {
       location: "Remote",
       type: "Internship",
       icon: <Users className="w-6 h-6" />,
-      color: "from-green-500 to-emerald-400",
-      borderColor: "border-green-500/30",
+      color: "from-black-500 to-emerald-400",
+      borderColor: "border-black-500/30",
       achievements: [
         "Assisted in full-stack development of web applications using MERN stack",
         "Implemented RESTful APIs and integrated third-party services",
@@ -74,7 +74,7 @@ const Experience = () => {
       location: "Virtual - Cohort 4.1",
       type: "Bootcamp",
       icon: <Heart className="w-6 h-6" />,
-      color: "from-pink-500 to-rose-400",
+      color: "from-red-800 to-rose-400",
       borderColor: "border-pink-500/30",
       achievements: [
         "Currently undergoing intensive software development training program",
@@ -157,16 +157,7 @@ const Experience = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-white/5 backdrop-blur-sm border border-white/10 mb-6"
-          >
-            <Award className="text-[#FFD700] text-lg" />
-            <span className="text-sm font-medium text-gray-300">Career Journey</span>
-         
-          </motion.div>
+          
 
           <motion.h2
             initial={{ opacity: 0, y: 30 }}

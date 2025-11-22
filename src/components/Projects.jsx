@@ -228,33 +228,32 @@ const Projects = () => {
       status: "development",
       year: "2025"
     },
-    {
-      id: 9,
-      title: "TaskFlow - Project Management SaaS",
-      description: "Enterprise-grade project management platform with AI task automation, team collaboration, and real-time analytics.",
-      longDescription: "A comprehensive SaaS platform for project management featuring AI-powered task automation, real-time team collaboration, advanced analytics, and integrations with popular development tools. Built with scalability and enterprise needs in mind.",
-      image: "/api/placeholder/600/400",
-      technologies: [SiNextdotjs, SiTypescript, SiTailwindcss, FaNodeJs, SiMongodb],
-      techNames: ["Next.js 14", "TypeScript", "Tailwind CSS", "Node.js", "MongoDB"],
-      category: "fullstack",
-      github: "https://github.com/meryem-hub/taskflow",
-      live: "#",
-      features: [
-        "AI task prioritization",
-        "Real-time team collaboration",
-        "Github/Jira integrations",
-        "Advanced analytics dashboard",
-        "Time tracking & reporting",
-        "Custom workflow automation"
-      ],
-      stats: {
-        progress: "Development",
-        scalability: "Enterprise",
-        integrations: "10+ planned"
-      },
-      status: "development",
-      year: "2025"
-    }
+  {
+  id: 9,
+  title: "LiyuCV Builder",
+  description: "CV builder for creating professional resumes with customizable templates and automated content suggestions.",
+  longDescription: "LiyuCV Builder is an intuitive platform that allows users to quickly build professional CVs and resumes.",
+  image: "https://liyucv.netlify.app", 
+  technologies: [SiNextdotjs, SiTailwindcss],
+  techNames: ["Next.js", "Tailwind CSS"],
+  category: "fullstack",
+  github: " ", 
+  live: "https://liyucv.netlify.app",
+  features: [
+    "Customizable templates",
+    "Export as PDF",
+    "Responsive design",
+    "Easy-to-use interface"
+  ],
+  stats: {
+    progress: "Development",
+    templates: "4+ planned",
+    automation: "AI-powered"
+  },
+  status: "development",
+  year: "2025"
+}
+
   ];
 
   const filteredProjects = activeFilter === 'all' 

@@ -18,7 +18,7 @@ const texts = [
   { 
     title: "Computer Engineering Student", 
     icon: GraduationCap,
-    color: "text-blue-400"
+    color: "text-white-400"
   },
   { 
     title: "Junior Full-Stack Developer", 
@@ -28,7 +28,7 @@ const texts = [
   { 
     title: "Frontend Developer", 
     icon: FaReact,
-    color: "text-purple-400"
+    color: "text-gray-400"
   },
   { 
     title: "Software Development Intern", 
@@ -42,7 +42,7 @@ const texts = [
   const techIcons = [
     { icon: FaReact, name: "React", color: "text-cyan-400" },
     { icon: SiNextdotjs, name: "Next.js", color: "text-white" },
-    { icon: SiTypescript, name: "TypeScript", color: "text-blue-500" },
+    { icon: SiTypescript, name: "TypeScript", color: "text-white-500" },
     { icon: FaJs, name: "JavaScript", color: "text-yellow-400" },
     { icon: FaNodeJs, name: "Node.js", color: "text-green-500" },
     { icon: SiMongodb, name: "MongoDB", color: "text-green-400" },
@@ -131,21 +131,9 @@ const texts = [
         className="absolute inset-0 bg-gradient-to-br from-[#0a0a0a] via-[#111] to-[#1a1a2e]"
       />
       
-      {/* Animated Gradient Orbs */}
-      <motion.div
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 0.4, scale: 1 }}
-        transition={{ duration: 2, ease: "easeOut" }}
-        className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-[#FFD700] to-yellow-400 rounded-full blur-[120px] opacity-20"
-      />
+    
       
-      <motion.div
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 0.3, scale: 1 }}
-        transition={{ duration: 2, delay: 0.5, ease: "easeOut" }}
-        className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full blur-[100px] opacity-20"
-      />
-
+   
      
 
       {/* Main Content */}
