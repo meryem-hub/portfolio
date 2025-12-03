@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ExternalLink, Github, ArrowRight, Filter, X, Users, Star, Zap, Calendar } from 'lucide-react';
 import { FaReact, FaNodeJs, FaAws, FaPython } from 'react-icons/fa';
-import { SiTypescript, SiNextdotjs, SiTailwindcss, SiMongodb, SiExpress, SiNetlify } from 'react-icons/si';
+import { SiTypescript, SiNextdotjs, SiTailwindcss, SiMongodb, SiExpress, SiNetlify,SiPostgresql, } from 'react-icons/si';
 
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState('all');
@@ -116,8 +116,7 @@ const Projects = () => {
       ],
       stats: {
         performance: "88%",
-        team: "3 members",
-        contribution: "Frontend Lead"
+        team: "4 members",
       },
       status: "completed",
       year: "2025"
@@ -201,33 +200,32 @@ const Projects = () => {
   year: "2025"
 }
 ,
-    {
-      id: 8,
-      title: "DevHub - Developer Portfolio Builder",
-      description: "AI-powered portfolio builder for developers with automated project imports, resume parsing, and customizable templates.",
-      longDescription: "A sophisticated platform that helps developers create stunning portfolios automatically. Features include GitHub project integration, AI-generated descriptions, resume parsing, and multiple responsive templates designed specifically for tech professionals.",
-      image: "/api/placeholder/600/400",
-      technologies: [SiNextdotjs, SiTypescript, SiTailwindcss, FaAws],
-      techNames: ["Next.js 14", "TypeScript", "Tailwind CSS", "AWS"],
-      category: "fullstack",
-      github: "https://github.com/meryem-hub/devhub",
-      live: "#",
-      features: [
-        "GitHub API integration",
-        "AI-generated project descriptions",
-        "Resume parsing & analysis",
-        "Multiple portfolio templates",
-        "Real-time preview",
-        "Export as static site"
-      ],
-      stats: {
-        progress: "Development",
-        templates: "10+ planned",
-        automation: "AI-powered"
-      },
-      status: "development",
-      year: "2025"
-    },
+  {
+  id: 1,
+  title: "Smart Goal Breaker",
+  description: "AI-powered goal decomposition platform that transforms ambitious goals into actionable plans.",
+  longDescription: "A sophisticated web app that helps users break down complex goals into executable steps. Features include AI-powered goal analysis, instant actionable breakdowns, and complexity awareness for each step.",
+  image: "/api/placeholder/600/400", // replace with real screenshot if available
+  technologies: [SiNextdotjs, SiTailwindcss, SiPostgresql, ],
+  techNames: ["Next.js 14", "Tailwind CSS", "PostgreSQL", "Vercel"],
+  category: "fullstack",
+  github: " ",
+  live: "https://goal-breaker-nine.vercel.app",
+  features: [
+    "AI-powered goal decomposition",
+    "Instant actionable breakdowns",
+    "Challenge level awareness",
+    "Intuitive user interface",
+    "Responsive design",
+  ],
+  stats: {
+    progress: "Completed",
+    automation: "AI-powered"
+  },
+  status: "completed",
+  year: "2025"
+},
+
   {
   id: 9,
   title: "LiyuCV Builder",

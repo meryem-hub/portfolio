@@ -15,7 +15,10 @@ const About = () => {
 
   const skills = [
     { name: "Next.js", icon: SiNextdotjs, color: "text-white", gradient: "from-white to-gray-300" },
-    { name: "React.js", icon: FaReact, color: "text-cyan-400", gradient: "from-cyan-400 to-red-500" },
+    {  name: "React.js", 
+    icon: FaReact, 
+    color: "text-[#61DAFB]",  // official React color
+    gradient: "from-[#61DAFB] to-[#61DAFB]"},
   
     { name: "JavaScript", icon: FaJs, color: "text-yellow-400", gradient: "from-yellow-400 to-yellow-600" },
     { name: "Node.js", icon: FaNodeJs, color: "text-green-500", gradient: "from-green-500 to-green-700" },
@@ -29,7 +32,7 @@ const About = () => {
       icon: Code, 
       title: "Clean Architecture", 
       description: "Scalable, maintainable code following best practices",
-      gradient: "from-cyan-400 to-red-500"
+      gradient: "from-red-400 to-red-500"
     },
     { 
       icon: Zap, 
@@ -47,7 +50,7 @@ const About = () => {
       icon: Lightbulb, 
       title: "Innovation", 
       description: "Leveraging cutting-edge technologies and patterns",
-      gradient: "from-green-400 to-cyan-400"
+      gradient: "from-orange-400 to-yellow-400"
     }
   ];
 
