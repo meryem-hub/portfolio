@@ -17,7 +17,7 @@ const About = () => {
     { name: "Next.js", icon: SiNextdotjs, color: "text-white", gradient: "from-white to-gray-300" },
     {  name: "React.js", 
     icon: FaReact, 
-    color: "text-[#61DAFB]",  // official React color
+    color: "text-[#61DAFB]",  
     gradient: "from-[#61DAFB] to-[#61DAFB]"},
   
     { name: "JavaScript", icon: FaJs, color: "text-yellow-400", gradient: "from-yellow-400 to-yellow-600" },

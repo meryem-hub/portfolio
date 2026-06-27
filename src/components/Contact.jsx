@@ -271,7 +271,7 @@ const Contact = () => {
               className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 p-6"
             >
               <div className="flex items-center gap-4">
-                <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse" />
+               
                 <div>
                   <h4 className="text-white font-semibold">Currently Available</h4>
                   <p className="text-gray-400 text-sm">For freelance projects and collaborations</p>
@@ -425,11 +425,11 @@ const Contact = () => {
           <p className="text-gray-500 italic text-sm max-w-xl mx-auto mb-3">
   "Think. Code. Deploy. Repeat."
           </p>
-          <div className="border-t border-white/10 pt-4">
-            <p className="text-gray-400 text-xs">
-              © 2025 Meryem Ebrahim • Built with passion in Ethiopia
-            </p>
-          </div>
+      <div className="border-t border-white/10 pt-4">
+  <p className="text-gray-400 text-xs">
+    © {new Date().getFullYear()} Meryem Ebrahim • Built with passion in Ethiopia
+  </p>
+</div>
         </motion.div>
       </div>
     </section>

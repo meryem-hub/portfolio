@@ -1,4 +1,3 @@
-// components/Projects.jsx
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ExternalLink, Github, ArrowRight, Filter, X, Users, Star, Zap, Calendar } from 'lucide-react';
@@ -178,12 +177,12 @@ const Projects = () => {
   title: "EthioAI - AI Solutions",
   description: "Team-based AI platform focusing on Ethiopian language processing and machine learning solutions.",
   longDescription: "An innovative AI platform built during my internship at Nile Tech, focusing on Ethiopian languages and local context. Developed natural language processing capabilities, data analysis tools, and intelligent solutions tailored for Ethiopian businesses and developers. Built collaboratively with a team using the MERN stack.",
-  image: "https://ethioai-project.netlify.app", // or your actual image URL
+  image: "https://ethioai-project.netlify.app",
   technologies: [FaReact, FaNodeJs, SiMongodb],
   techNames: ["React", "Node.js", "MongoDB"],
-  category: "team", // moved from webapp → team
-  github: "https://github.com/meryem-hub/ethioai", // optional if available
-  live: "#", // placeholder for live demo
+  category: "team",
+  github: "https://github.com/meryem-hub/ethioai",
+  live: "#",
   features: [
     "Amharic language processing",
     "Data analysis dashboard",
@@ -205,7 +204,7 @@ const Projects = () => {
   title: "Smart Goal Breaker",
   description: "AI-powered goal decomposition platform that transforms ambitious goals into actionable plans.",
   longDescription: "A sophisticated web app that helps users break down complex goals into executable steps. Features include AI-powered goal analysis, instant actionable breakdowns, and complexity awareness for each step.",
-  image: "/api/placeholder/600/400", // replace with real screenshot if available
+  image: "/api/placeholder/600/400",
   technologies: [SiNextdotjs, SiTailwindcss, SiPostgresql, ],
   techNames: ["Next.js 14", "Tailwind CSS", "PostgreSQL", "Vercel"],
   category: "fullstack",
@@ -303,11 +302,7 @@ const Projects = () => {
 
   return (
     <section id="projects" className="relative py-20 bg-gradient-to-br from-[#0a0a0a] via-[#111] to-[#1a1a2e] overflow-hidden">
-      {/* Background Elements */}
-    
-      
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -347,7 +342,6 @@ const Projects = () => {
           </motion.p>
         </motion.div>
 
-        {/* Filter Buttons */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -371,7 +365,6 @@ const Projects = () => {
           ))}
         </motion.div>
 
-        {/* Projects Grid */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -393,7 +386,6 @@ const Projects = () => {
                 onClick={() => setSelectedProject(project)}
               >
                 <div className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 overflow-hidden hover:border-[#FFD700]/30 transition-all duration-300 h-full flex flex-col">
-                  {/* Project Header */}
                   <div className="p-4 border-b border-white/10 flex justify-between items-center">
                     <div className="flex items-center gap-2">
                       {getStatusIcon(project.status)}
@@ -407,7 +399,6 @@ const Projects = () => {
                     </div>
                   </div>
 
-                  {/* Project Image */}
                   <div className="relative h-40 overflow-hidden">
                     <div className="w-full h-full bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center">
                       <div className="text-4xl text-[#FFD700] opacity-50">
@@ -416,7 +407,6 @@ const Projects = () => {
                     </div>
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     
-                    {/* Team Project Badge */}
                     {project.category === 'team' && (
                       <div className="absolute top-3 left-3">
                         <div className="flex items-center gap-1 px-2 py-1 bg-blue-500/20 rounded-full border border-blue-500/30">
@@ -427,7 +417,6 @@ const Projects = () => {
                     )}
                   </div>
 
-                  {/* Project Content */}
                   <div className="p-6 flex-1 flex flex-col">
                     <h3 className="text-xl font-bold text-white mb-3 group-hover:text-[#FFD700] transition-colors duration-300">
                       {project.title}
@@ -437,7 +426,6 @@ const Projects = () => {
                       {project.description}
                     </p>
 
-                    {/* Technologies */}
                     <div className="flex flex-wrap gap-2 mb-4">
                       {project.techNames.map((tech, index) => (
                         <span
@@ -449,7 +437,6 @@ const Projects = () => {
                       ))}
                     </div>
 
-                    {/* Stats */}
                     <div className="flex justify-between items-center text-xs text-gray-500 mb-4">
                       {Object.entries(project.stats).map(([key, value]) => (
                         <div key={key} className="text-center">
@@ -459,10 +446,11 @@ const Projects = () => {
                       ))}
                     </div>
 
-                    {/* Action Buttons */}
                     <div className="flex gap-3 pt-4 border-t border-white/10">
                       <motion.a
                         href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                         onClick={(e) => e.stopPropagation()}
@@ -473,6 +461,8 @@ const Projects = () => {
                       </motion.a>
                       <motion.a
                         href={project.live}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                         onClick={(e) => e.stopPropagation()}
@@ -493,7 +483,6 @@ const Projects = () => {
           </AnimatePresence>
         </motion.div>
 
-        {/* CTA */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -502,6 +491,8 @@ const Projects = () => {
         >
           <motion.a
             href="https://github.com/meryem-hub"
+            target="_blank"
+            rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="inline-flex items-center gap-3 px-8 py-4 border-2 border-[#FFD700] text-[#FFD700] font-bold rounded-full hover:bg-[#FFD700] hover:text-black transition-all duration-300 group"
@@ -513,7 +504,6 @@ const Projects = () => {
         </motion.div>
       </div>
 
-      {/* Project Modal */}
       <AnimatePresence>
         {selectedProject && (
           <motion.div
@@ -582,6 +572,8 @@ const Projects = () => {
                 <div className="flex gap-4">
                   <motion.a
                     href={selectedProject.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     className="flex items-center gap-2 px-6 py-3 bg-white/5 rounded-lg text-gray-300 hover:bg-white/10 hover:text-white transition-all duration-300"
@@ -592,6 +584,8 @@ const Projects = () => {
                   {selectedProject.status === 'completed' && (
                     <motion.a
                       href={selectedProject.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                       className="flex items-center gap-2 px-6 py-3 bg-[#FFD700] text-black rounded-lg font-medium hover:bg-yellow-400 transition-all duration-300"
