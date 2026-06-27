@@ -1,43 +1,28 @@
 import { motion, useMotionValue, useSpring, useTransform, AnimatePresence } from "framer-motion";
 import { useEffect, useState, useCallback } from "react";
-import { FaReact, FaJs, FaNodeJs, FaAws, FaGithub, FaLinkedin, FaArrowRight, FaCode, FaPalette, FaLightbulb, FaTools, FaMobile, FaCloud, FaServer } from "react-icons/fa";
-import { SiTypescript, SiAmazon, SiNextdotjs, SiMongodb, SiTailwindcss } from "react-icons/si";
-import { 
-  GraduationCap, 
-  BookOpen 
-} from "lucide-react";
-import { 
-  FaUsers, 
-} from "react-icons/fa";
+import { FaReact, FaJs, FaNodeJs, FaGithub, FaArrowRight } from "react-icons/fa";
+import { SiTypescript, SiNextdotjs, SiMongodb, SiTailwindcss } from "react-icons/si";
+
 const Hero = () => {
   const [textIndex, setTextIndex] = useState(0);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isVisible, setIsVisible] = useState(false);
   
-const texts = [
-  { 
-    title: "Computer Engineering Student", 
-    icon: GraduationCap,
-    color: "text-white-400"
-  },
-  { 
-    title: "Junior Full-Stack Developer", 
-    icon: FaCode,
-    color: "text-cyan-400"
-  },
-  { 
-    title: "Frontend Developer", 
-    icon: FaReact,
-    color: "text-gray-400"
-  },
-  { 
-    title: "Software Development Intern", 
-    icon: FaUsers,
-    color: "text-green-400"
-  },
- 
-
-];
+  const texts = [
+    { 
+      title: "Computer Engineering Student", 
+      color: "text-white-400"
+    },
+    { 
+      title: "Junior Full-Stack Developer", 
+      color: "text-cyan-400"
+    },
+   
+    { 
+      title: "Software Development Intern", 
+      color: "text-green-400"
+    },
+  ];
 
   const techIcons = [
     { icon: FaReact, name: "React", color: "text-cyan-400" },
@@ -49,7 +34,6 @@ const texts = [
     { icon: SiTailwindcss, name: "Tailwind CSS", color: "text-cyan-300" },
   ];
 
-  // Mouse parallax effects
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
   
@@ -61,7 +45,6 @@ const texts = [
   const floatingX = useTransform(smoothX, [-100, 100], [-10, 10]);
   const floatingY = useTransform(smoothY, [-100, 100], [-10, 10]);
 
-  // Performance-optimized text rotation
   useEffect(() => {
     const interval = setInterval(() => {
       setTextIndex((prev) => (prev + 1) % texts.length);
@@ -69,7 +52,6 @@ const texts = [
     return () => clearInterval(interval);
   }, [texts.length]);
 
-  // Mouse move handler with throttling
   const handleMouseMove = useCallback((e) => {
     const { clientX, clientY } = e;
     const x = (clientX - window.innerWidth / 2) / 25;
@@ -80,7 +62,6 @@ const texts = [
     setMousePosition({ x: clientX, y: clientY });
   }, [mouseX, mouseY]);
 
-  // Intersection Observer for performance
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -99,7 +80,6 @@ const texts = [
     };
   }, []);
 
-  // Typing effect simulation
   const TypingText = ({ text, delay = 0 }) => {
     const [displayText, setDisplayText] = useState('');
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -117,31 +97,18 @@ const texts = [
     return <span>{displayText}</span>;
   };
 
-
-
   return (
     <section
       id="home"
       className="relative flex flex-col justify-center items-center min-h-screen text-center overflow-hidden bg-gradient-to-br from-[#0a0a0a] via-[#111] to-[#1a1a2e] text-white cursor-none pt-20"
       onMouseMove={handleMouseMove}
     >
-      {/* Advanced Background Effects */}
       <motion.div
         style={{ x: backgroundX, y: backgroundY }}
         className="absolute inset-0 bg-gradient-to-br from-[#0a0a0a] via-[#111] to-[#1a1a2e]"
       />
-      
-    
-      
-   
-     
 
-      {/* Main Content */}
       <div className="relative z-10 max-w-6xl mx-auto px-6">
-        {/* Intro Badge */}
-       
-
-        {/* Main Heading - Single Line */}
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
@@ -162,7 +129,6 @@ const texts = [
           </motion.span>
         </motion.h1>
 
-        {/* Animated Subtitle */}
         <div className="h-20 mb-8">
           <AnimatePresence mode="wait">
             <motion.div
@@ -173,30 +139,21 @@ const texts = [
               transition={{ duration: 0.5 }}
               className="text-2xl md:text-4xl font-bold text-gray-300 flex items-center justify-center gap-3"
             >
-              {(() => {
-                const IconComponent = texts[textIndex].icon;
-                return (
-                  <IconComponent className={`${texts[textIndex].color} text-3xl`} />
-                );
-              })()}
               <TypingText text={texts[textIndex].title} />
             </motion.div>
           </AnimatePresence>
         </div>
 
-        {/* Description */}
-     <motion.p
-  initial={{ opacity: 0, y: 30 }}
-  animate={isVisible ? { opacity: 1, y: 0 } : {}}
-  transition={{ duration: 0.8, delay: 0.8 }}
-  className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed mb-12"
->
-  Creating <span className="text-[#FFD700] font-semibold">impactful digital products</span> that solve real-world problems 
-  through <span className="text-[#FFD700] font-semibold">innovative technology</span> and smooth user experiences.
-</motion.p>
+        <motion.p
+          initial={{ opacity: 0, y: 30 }}
+          animate={isVisible ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, delay: 0.8 }}
+          className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed mb-12"
+        >
+          Creating <span className="text-[#FFD700] font-semibold">impactful digital products</span> that solve real-world problems 
+          through <span className="text-[#FFD700] font-semibold">innovative technology</span> and smooth user experiences.
+        </motion.p>
 
-
-        {/* Tech Stack Icons */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
@@ -216,7 +173,6 @@ const texts = [
                 title={tech.name}
               >
                 <IconComponent />
-                {/* Tooltip */}
                 <div className="absolute -bottom-10 left-1/2 transform -translate-x-1/2 bg-black/90 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
                   {tech.name}
                 </div>
@@ -225,7 +181,6 @@ const texts = [
           })}
         </motion.div>
 
-        {/* CTA Buttons */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
@@ -241,7 +196,7 @@ const texts = [
             whileTap={{ scale: 0.95 }}
             className="group relative px-12 py-4 bg-[#FFD700] text-black font-bold rounded-full overflow-hidden transition-all duration-300 flex items-center gap-3"
           >
-           <a href="https://github.com/meryem-hub"><span className="relative z-10">View My Work</span></a> 
+            <span className="relative z-10">View My Work</span>
             <FaGithub className="relative z-10 text-lg" />
             <motion.div
               className="absolute inset-0 bg-gradient-to-r from-yellow-300 to-[#FFD700]"
@@ -266,14 +221,7 @@ const texts = [
             <FaArrowRight className="group-hover:translate-x-1 transition-transform duration-300" />
           </motion.a>
         </motion.div>
-
-   
-      
       </div>
-
-    
-
- 
     </section>
   );
 };
