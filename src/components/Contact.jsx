@@ -427,7 +427,7 @@ const Contact = () => {
           </p>
       <div className="border-t border-white/10 pt-4">
   <p className="text-gray-400 text-xs">
-    © {new Date().getFullYear()} Meryem Ebrahim • Built with passion in Ethiopia
+    © 2026 Meryem Ebrahim • Built with passion in Ethiopia
   </p>
 </div>
         </motion.div>
